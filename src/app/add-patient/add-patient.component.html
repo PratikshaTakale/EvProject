@@ -1,0 +1,32 @@
+
+
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add Patient</mat-card-title><br>
+    </mat-card-header><br>
+    <mat-card-content>
+      <form [formGroup]="patientForm" (ngSubmit)="submitPatient()">
+        <mat-form-field>
+          <input matInput formControlName="name" placeholder="Patient Name" required>
+          <mat-error *ngIf="patientForm.get('name').hasError('required')">Name is required</mat-error>
+          <mat-error *ngIf="patientForm.get('name').hasError('maxlength')">Maximum 50 characters allowed</mat-error>
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput formControlName="age" type="number" placeholder="Age" required>
+          <mat-error *ngIf="patientForm.get('age').hasError('required')">Age is required</mat-error>
+          <mat-error *ngIf="patientForm.get('age').hasError('min')">Minimum age is 0</mat-error>
+          <mat-error *ngIf="patientForm.get('age').hasError('max')">Maximum age is 150</mat-error>
+        </mat-form-field><br>
+        <button mat-raised-button color="primary" type="submit">Add Patient</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+ 
+  
+  
+  

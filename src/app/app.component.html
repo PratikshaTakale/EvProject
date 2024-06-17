@@ -1,4 +1,34 @@
-
-<p>This is an EV Project</p>
-
-<router-outlet></router-outlet>
+<!-- <div class="app-container">
+    <router-outlet></router-outlet>
+  </div> -->
+  <div class="app-container">
+    <nav class="navbar navbar-expand-lg custom-navbar" [ngClass]="{ 'hide-navbar': hideNavbar }">
+      <a class="navbar-brand" routerLink="/">Medication Fulfillment App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/add-patient">Add Patient</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/checkout">Checkout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+  
+  

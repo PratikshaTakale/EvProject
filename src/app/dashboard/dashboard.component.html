@@ -1,0 +1,23 @@
+
+
+<mat-toolbar color="primary">
+  <span>Search Medicines</span>
+  <span class="example-spacer"></span>
+  <mat-form-field>
+    <input matInput [formControl]="searchControl" placeholder="Search for medicines...">
+  </mat-form-field>
+</mat-toolbar>
+
+<div class="container">
+  <h3>Medicine Results:</h3>
+  <ul>
+    <li *ngFor="let medicine of medicines" [ngClass]="{'highlighted': medicine.medicine_name.toLowerCase().includes(searchControl.value?.toLowerCase())}">
+      {{ medicine.medicine_name}}
+    </li>
+  </ul>
+</div>
+
+
+
+
+  

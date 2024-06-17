@@ -1,0 +1,30 @@
+
+.container {
+  margin: 20px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+mat-toolbar {
+  margin-top: 64px; 
+}
+
+.highlighted {
+  color: black; 
+  font-weight: bold; 
+}
+
+
+
+  

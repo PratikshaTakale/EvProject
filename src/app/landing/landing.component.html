@@ -1,0 +1,48 @@
+
+  <div class="landing">
+    <header>
+      <nav class="navbar navbar-expand-lg custom-navbar">
+        <a class="navbar-brand" routerLink="/">medicines website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/">Landing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/add-patient">Add Patient</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/checkout">Checkout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome to Medicines website!</h1>
+        <p class="lead">Your one-stop solution for managing medicines and patient orders.</p>
+        <hr class="my-4">
+        <p>Get started by logging in or exploring our dashboard.</p>
+        <a class="btn btn-primary btn-lg" (click)=" navigateToLogin()" role="button">Login</a>
+      </div>
+    </main>
+  
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">© 2024 Medication Fulfillment App. All rights reserved.</span>
+      </div>
+    </footer>
+  </div>
+  
