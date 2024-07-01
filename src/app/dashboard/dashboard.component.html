@@ -1,23 +1,178 @@
-
-
-<mat-toolbar color="primary">
-  <span>Search Medicines</span>
-  <span class="example-spacer"></span>
-  <mat-form-field>
-    <input matInput [formControl]="searchControl" placeholder="Search for medicines...">
+<!-- <div class="container">
+  <mat-form-field appearance="outline">
+    <mat-label>Search Medicines</mat-label>
+    <input matInput [formControl]="searchControl">
   </mat-form-field>
-</mat-toolbar>
 
-<div class="container">
-  <h3>Medicine Results:</h3>
-  <ul>
-    <li *ngFor="let medicine of medicines" [ngClass]="{'highlighted': medicine.medicine_name.toLowerCase().includes(searchControl.value?.toLowerCase())}">
-      {{ medicine.medicine_name}}
-    </li>
-  </ul>
-</div>
+  <div class="table-container">
+    <table mat-table [dataSource]="filteredMedicines" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="medicine_name">
+        <th mat-header-cell *matHeaderCellDef> Medicine Name </th>
+        <td mat-cell *matCellDef="let medicine" [class.highlight]="isHighlighted(medicine.medicine_name)">
+          {{medicine.medicine_name}}
+        </td>
+      </ng-container>
+
+   
+      <ng-container matColumnDef="content">
+        <th mat-header-cell *matHeaderCellDef> Content </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.content}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="mrp">
+        <th mat-header-cell *matHeaderCellDef> MRP </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.mrp}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.price}} </td>
+      </ng-container>
 
 
+      <ng-container matColumnDef="packing_size">
+        <th mat-header-cell *matHeaderCellDef> Packing Size </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.packing_size}} </td>
+      </ng-container>
 
+   
+      <ng-container matColumnDef="manufacturer_name">
+        <th mat-header-cell *matHeaderCellDef> Manufacturer </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.manufacturer_name}} </td>
+      </ng-container>
+
+   
+      <ng-container matColumnDef="medicine_type">
+        <th mat-header-cell *matHeaderCellDef> Medicine Type </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.medicine_type}} </td>
+      </ng-container>
 
   
+      <ng-container matColumnDef="gst_percentage">
+        <th mat-header-cell *matHeaderCellDef> GST Percentage </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.gst_percentage}} </td>
+      </ng-container>
+
+   
+      <ng-container matColumnDef="schedule_type">
+        <th mat-header-cell *matHeaderCellDef> Schedule Type </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.schedule_type}} </td>
+      </ng-container>
+
+   
+      <ng-container matColumnDef="available_for_patient">
+        <th mat-header-cell *matHeaderCellDef> Available for Patient </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.available_for_patient}} </td>
+      </ng-container>
+
+    
+      <ng-container matColumnDef="discontinued">
+        <th mat-header-cell *matHeaderCellDef> Discontinued </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.discontinued}} </td>
+      </ng-container>
+<br>
+      <button class="btn btn-primary" style="align-items: center;">continue...</button>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+    </table>
+  </div>
+</div>
+
+ -->
+
+ <div class="container">
+  <mat-form-field appearance="outline">
+    <mat-label>Search Medicines</mat-label>
+    <input matInput [formControl]="searchControl">
+  </mat-form-field>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="filteredMedicines" class="mat-elevation-z8">
+
+      <!-- Medicine Name Column -->
+      <ng-container matColumnDef="medicine_name">
+        <th mat-header-cell *matHeaderCellDef> Medicine Name </th>
+        <td mat-cell *matCellDef="let medicine" [class.highlight]="isHighlighted(medicine.medicine_name)">
+          {{medicine.medicine_name}}
+        </td>
+      </ng-container>
+
+      <!-- Content Column -->
+      <ng-container matColumnDef="content">
+        <th mat-header-cell *matHeaderCellDef> Content </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.content}} </td>
+      </ng-container>
+
+      <!-- MRP Column -->
+      <ng-container matColumnDef="mrp">
+        <th mat-header-cell *matHeaderCellDef> MRP </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.mrp}} </td>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.price}} </td>
+      </ng-container>
+
+      <!-- Packing Size Column -->
+      <ng-container matColumnDef="packing_size">
+        <th mat-header-cell *matHeaderCellDef> Packing Size </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.packing_size}} </td>
+      </ng-container>
+
+      <!-- Manufacturer Name Column -->
+      <ng-container matColumnDef="manufacturer_name">
+        <th mat-header-cell *matHeaderCellDef> Manufacturer </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.manufacturer_name}} </td>
+      </ng-container>
+
+      <!-- Medicine Type Column -->
+      <ng-container matColumnDef="medicine_type">
+        <th mat-header-cell *matHeaderCellDef> Medicine Type </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.medicine_type}} </td>
+      </ng-container>
+
+      <!-- GST Percentage Column -->
+      <ng-container matColumnDef="gst_percentage">
+        <th mat-header-cell *matHeaderCellDef> GST Percentage </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.gst_percentage}} </td>
+      </ng-container>
+
+      <!-- Schedule Type Column -->
+      <ng-container matColumnDef="schedule_type">
+        <th mat-header-cell *matHeaderCellDef> Schedule Type </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.schedule_type}} </td>
+      </ng-container>
+
+      <!-- Available for Patient Column -->
+      <ng-container matColumnDef="available_for_patient">
+        <th mat-header-cell *matHeaderCellDef> Available for Patient </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.available_for_patient}} </td>
+      </ng-container>
+
+      <!-- Discontinued Column -->
+      <ng-container matColumnDef="discontinued">
+        <th mat-header-cell *matHeaderCellDef> Discontinued </th>
+        <td mat-cell *matCellDef="let medicine"> {{medicine.discontinued}} </td>
+      </ng-container>
+
+      <!-- Button Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let medicine">
+          <button mat-icon-button color="primary" (click)="addToCart(medicine)">
+            <mat-icon>add_shopping_cart</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Define Columns -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

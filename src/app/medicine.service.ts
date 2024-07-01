@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class MedicineService {
 
-  private apiUrl = 'http://localhost:3000/medicines';  
+  private apiUrl = 'http://localhost:3000/data';
 
   constructor(private http: HttpClient) {}
 
-  getMedicines(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  searchMedicines(query: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}?search=${query}`);
   }
 }

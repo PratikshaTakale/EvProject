@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {path:'' , component:LandingComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'add-patient',component:AddPatientComponent},
   {path:'checkout' , component:CheckoutComponent},
+  {path:'cart', component:CartComponent},
   { path: '**', redirectTo: '/landing' }
 ];
 

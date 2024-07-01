@@ -1,0 +1,10 @@
+
+<h2 mat-dialog-title>Confirm Order</h2>
+<mat-dialog-content>
+  <p>Are you sure you want to place an order for {{ data.medicine_name }}?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="confirmOrder()">Confirm</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
+

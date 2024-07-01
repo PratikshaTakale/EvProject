@@ -8,7 +8,7 @@ import { filter } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'EVProject';
+  /* title = 'EVProject';
   hideNavbar: boolean = false;
 
   constructor(private router: Router) {
@@ -19,5 +19,5 @@ export class AppComponent {
         this.hideNavbar = event.url === '/login';
       }
     });
-  }
+  } */
 }

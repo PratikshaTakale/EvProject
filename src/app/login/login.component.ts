@@ -9,24 +9,6 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  /* loginForm: FormGroup | any;
-
-  constructor(private fb: FormBuilder, private router: Router) { }
-
-  ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
-    });
-  }
-
-  login(): void {
-    if (this.loginForm.valid) {
-
-      this.router.navigateByUrl('/dashboard');
-    }
-  } */
-
 
     loginForm: FormGroup | any;
     errorMessage: string | any;

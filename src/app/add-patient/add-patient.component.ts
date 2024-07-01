@@ -1,34 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PatientService } from '../patient.service';
+import { MedicinescheckoutService } from '../medicinescheckout.service';
+import { Medicine } from '../medicine';
+import { Patientinterfacechk } from '../patientinterfacechk';
+import { PatientformService } from '../patientform.service';
 
 @Component({
   selector: 'app-add-patient',
   templateUrl: './add-patient.component.html',
   styleUrls: ['./add-patient.component.css']
 })
-export class AddPatientComponent {
+export class AddPatientComponent  {
+  patientForm: FormGroup;
 
-  patientForm: FormGroup | any;
-
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private patientService: PatientService
-  ) {}
-
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private patientService: PatientformService) {
     this.patientForm = this.fb.group({
-      name: ['', [Validators.required, Validators.maxLength(50)]],
-      age: ['', [Validators.required, Validators.min(0), Validators.max(150)]]
+      name: ['', Validators.required],
+      age: ['', Validators.required]
     });
   }
 
-  submitPatient(): void {
+  onSubmit() {
     if (this.patientForm.valid) {
-      this.patientService.setPatient(this.patientForm.value);
-      this.router.navigate(['/checkout']);
+      const newPatient: Patientinterfacechk = this.patientForm.value;
+      this.patientService.addPatient(newPatient);
+      this.patientForm.reset();
     }
   }
 }

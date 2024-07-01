@@ -17,8 +17,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import { MedicinescheckComponent } from './medicinescheck/medicinescheck.component';
+import { MatIconModule } from '@angular/material/icon';
+import { CartComponent } from './cart/cart.component';
+import { OrderConfirmationDialogComponent } from './order-confirmation-dialog/order-confirmation-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,10 @@ import { MatTableModule } from '@angular/material/table';
     LoginComponent,
     DashboardComponent,
     AddPatientComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    MedicinescheckComponent,
+    CartComponent,
+    OrderConfirmationDialogComponent
    
   ],
   imports: [
@@ -45,6 +54,9 @@ import { MatTableModule } from '@angular/material/table';
     FormsModule,
     MatButtonModule,
     MatTableModule,
+    MatListModule,
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
